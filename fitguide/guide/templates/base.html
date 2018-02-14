@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   {% block title %}
+    <title>FitGuide</title>
+    {% endblock %}
+    <link rel="icon" href="img.png">
+  </head>
+  <style>
+  a{
+    color: black;
+    font-family: monospace;
+    text-align: center;
+    display: inline-block;
+    padding: 12px;
+    margin:4px;
+    text-decoration: none;
+    width: 30%;
+    height: 52px;
+    align-items: center;
+    font-family: verdana;
+    font-size: 22px;
+    background-color:red;
+  }
+  a:hover{
+    background-color:tomato;
+    text-decoration: none;
+    color: white;
+  }
+
+
+.container-fluid{
+  font-size: 25px;
+  font-family: monospace;
+  color: red;
+  text-decoration: underline;
+  background-color: black;
+  text-align: center;
+  padding-left: 2%;
+}
+body{
+  background-color:black;
+}
+  </style>
+  <body>
+    {% if user.is_authenticated %}
+    <div class="dropdown" style="padding:2px;">
+  <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class='btn btn-secondary'>
+    My Account
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dLabel" style="width:55%;">
+    <li><a href="/logout" target="self">Logout</a></li>
+    <li><a href="/edit" taget="self">Edit Profile</a></li>
+    <li><a href="/profile" target="self">Profile</a></li>
+    <li><a href="/schedule" target="self">Open Schedule</a></li>
+  </ul>
+  </div>
+{% endif %}
+    <div class="container-fluid">
+     <h1>FitGuide</h1>
+    </div>
+<br>
+{% block body %}
+    <div class="description" style="background-color:lightgray; font-size:25px; text-align:center; font-family:monospace;">
+    <p>The Ultimate Beginner's Guide to Fitness will teach you the fundamentals of training, nutrition, and supplementation in only 30 days. Take the first step! Walking, lifting weights, doing chores – it’s all good. Regardless of what you do, regular exercise and physical activity is the path to health and well-being. Exercise burns fat, builds muscle, lowers cholesterol, eases stress and anxiety, lets us sleep restfully. In this guide, we match resources to your exercise needs -- at every fitness level. The best way to keep building muscle mass or burn calories is to make it a habit to switch up your workout -- especially when you notice that your current plan has become comfy. It keeps you on your toes. You’re ready to turn your walks into jogs, lift heavier weights, or swim faster than you might have thought you ever would.</p>
+    </div>
+
+   <br>
+
+    <div class="linkbtn1" style="text-align:center;">
+    <a href="/login" target="_blank">Login</a>
+    </div>
+
+    <br>
+
+    <div class="linkbtn2" style="text-align:center;">
+    <a href="/register" target="_blank">Register</a>
+    </div>
+<br>
+<div class="container" style="width:100%; height:50px; background-color:lightgray; color:black; font-size:24px;">
+  Copyrights © 2018 All Rights Reserved by BAJRANG DAL
+</div>
+
+{% endblock %}
+  </body>
+</html>

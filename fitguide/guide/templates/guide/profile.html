@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Trainee Profile</title>
+{% endblock %}
+{% block body %}
+<div class="head" style="text-align:center; color:white; font-family:monospace; background-color:red;">
+<h3>Trainee Profile:</h3>
+<p>User Name = {{ user.username }}</p>
+<p>First Name = {{ user.first_name }}</p>
+<p>Last Name = {{ user.last_name }}</p>
+<p>Email = {{ user.email }}</p>
+</div>
+{% endblock %}

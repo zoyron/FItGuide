@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+<title>Today's SChedule</title>
+{% endblock %}
+{% block body %}
+<h1>Presenting you with the guide to be the best version of yourself.</h2>
+{% for exercise in exercises %}
+<h2 style="color:white; text-align:center; font-family:monospace;">{{ exercise.tip }}</h2>
+<p style="color:white; text-align:center; font-family:monospace;">{{ exercise.workout }}</p>
+<p style="color:white; text-align:right; font-family:monospace;">{{ exercise.start_date | linebreaksbr }}</p>
+{% endfor %}
+{% endblock %}
